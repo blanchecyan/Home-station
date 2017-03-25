@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width"> -->
+	<meta name="viewport" content = "width=device-width,maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="keywords" content="seokeywords"/>
+	<meta name="description" content="seodescription"/>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/icon/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/Trr.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min.css">
+	<!-- <link rel="stylesheet" href="css/cooker.css"> -->
+	<link rel="stylesheet" href="css/drawer.min.css">
+
+</head>
+<script src="js/jquery-1.12.2.js"></script>
+<script>
+	// var pic = $("#pic a img").click(function(e){})
+</script>
+<body class="drawer drawer-right">	
+<!-- 定义视图容器 -->
+<div id="app">
+	<!-- 可以被所有组件复用的视图，定义在vue实例化对象中 -->
+	<header class="header">
+		<div class="logei" >
+			<div class="lopic"><p class="logeu"><img src="img/loge/logoAPX.png" alt=""></p></div>
+			<div class="drawer-toggle drawer-hamberger loge">
+				<span></span>
+			</div>
+			<div class="drawer-main drawer-default">
+			 	 <nav class="drawer-nav" role="navigation"> 
+				    <div class="drawer-brand">
+				      <a :href="'#/list/' + id">Drawer</a>
+				    </div>
+
+				    <p class="drawer-nav-title">archiproducts</p>
+				    <ul class="drawer-nav-list">
+				     <li><a :href="'#/product/ + item.id'">Home Furnishing</a></li>
+				      <li><a :href="'#/product/ + item.id'">Lighting</a></li>
+				      <li><a :href="'#/product/ + item.id'">Bedroom</a></li>
+				      <li><a :href="'#/product/ + item.id'">Window curtains</a></li>
+				    </ul>
+
+				    <p class="drawer-nav-title">classification</p>
+				    <ul class="drawer-nav-list">
+				      <li><a :href="'#/product/ + item.id'">Desk</a></li>
+				      <li><a :href="'#/product/ + item.id'">Sheet</a></li>
+				      <li><a :href="'#/product/ + item.id'">Wardrobe</a></li>
+				      <li><a :href="'#/product/ + item.id'">Table lamp</a></li>
+				    </ul>
+
+				    <p class="drawer-nav-title">Kitchen</p>
+				    <ul class="drawer-nav-list">
+				      <li><a :href="'#/product/ + item.id'">Refrigerator</a></li>
+				      <li><a :href="'#/product/ + item.id'">Rice cooker</a></li>
+				      <li><a :href="'#/product/ + item.id'">Heater</a></li>
+				      <li><a :href="'#/product/ + item.id'">Kitchenware</a></li>
+				    </ul>
+			  </nav>
+		</div>
+		</div>
+		<!-- 代码 开始 -->
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/iscroll.js"></script>
+	<script src="js/jquery.drawer.min.js"></script>
+	<!-- 	<div class="search" v-show="isShowSearch"><input v-model="search" type="text" placeholder="请输入搜索关键字" v-on:keydown.enter="showResult"></div> -->
+	<script>
+		$(document).ready(function(){
+			$('.drawer').drawer();
+			$('.js-trigger').click(function(){
+			  $('.drawer').drawer("open");
+			});
+		});
+	</script> 
+		<div class="nav">
+			<ul class="clearfix" id="navul">
+				<li><a :href="'#/list/' + id">品牌</a></li>
+				<li><a :href="'#/list/' + id">Magazine</a></li>
+				<li><a :href="'#/list/' + id">Award</a></li>
+				<li><a :href="'#/list/' + id">活动</a></li>
+				<li><a :href="'#/list/' + id">BIM</a></li>
+			</ul>
+		</div>
+		<div id="foot">
+			<a :href="'#/">
+				<i class="iconfont jinniu">&#xe601;</i>
+				<p>返回</p>
+			</a>
+			<a :href="'#/product/ + item.id'">
+				<i class="iconfont jinniu">&#xe61f;</i>
+				<p>收藏</p>
+			</a>
+			<a :href="'#/list/' + id">
+				<i class="iconfont jinniu">&#xe670;</i>
+				<p>V榜单</p>
+			</a>
+			<a :href="'#/list/' + id">
+				<i class="iconfont jinniu">&#xe6fd;</i>
+				<p>购物车</p>
+			</a> 
+			<a :href="'#/product/ + item.id'" id="footlasta">
+				<i class="iconfont jinniu">&#xecb6;</i>
+				<p>我的</p>
+			</a>
+		</div>
+</header>
+<script>
+	$('#footlasta').onclick.function(){
+		console.log(12)
+	}
+</script>
+
+	<!-- 可以通过component元素来动态渲染组件 -->
+	<component v-bind:is="view"></component>
+</div>
+
+<!-- home轮播图 -->
+<!-- <div class="imgbox" >
+    <ul>
+        <li><a href=""><img src="img/01.png"></a></li>
+        <li><a href=""><img src="img/02.png"></a></li>
+        <li><a href=""><img src="img/03.png"></a></li>
+         <li><a href=""><img src="img/04.png"></a></li>
+        <li><a href=""><img src="img/05.png"></a></li>
+    </ul>
+</div> -->
+<script type="text/template" id="tpl_home">
+	<section class="hon">
+		<div class="home clearfix" id="home" class="swiper-container">
+			<ul class="type  clearfix">
+				<li v-for="item in list.pic" class="swiper-slide">
+					<a>
+						<img v-bind:src="'img/banner/' + item.url" alt="">
+					</a>			
+				</li>
+			</ul>
+		</div>
+		<div   id="home_title">
+			<p v-for="item in list.tih">{{item.tinav}}</p>
+			<span v-for="item in list.tih">{{item.hdui}}</span>
+			<span v-for="item in list.tih">{{item.juh}}</span>
+		</div>
+<!-- Productes -->		
+		<div id="wu">
+			<div class="tih2">
+				<h2>Products Categories</h2><span>more</span>
+			</div>
+			<ul class="picnav clearfix">	
+				<li v-for="item in ad">
+					<a :href="'#product/' + item.id">	
+						<img :src="'img/ad/' + item.url" id="deg">
+						<span>{{item.title}}</span>
+					</a>	
+				</li>
+			</ul>
+		</div>
+		<!-- recommend-->
+		<div id="adlist">
+			<div class="or"><h2>Recommend</h2></div>
+			<ul class=" clearfix">
+				<li  v-for="item in items" class="li1">
+					<span>{{item.title}}</span>
+					<em>{{item.pl}}</em>
+					<a :href="'#/product/' + item.id">	
+						<img :src="'img/adlist/' + item.img">
+					</a>
+
+				</li>
+			</ul>
+
+		</div>
+<!-- home-foot -->
+		<div  id="homefot">
+			<p v-for="item in list.homfot">{{item.tpl}}</p>
+			<a v-for="item in list.hopic">
+				<img :src="'img/at/' + item.img">
+			</a>			
+			<address v-for="item in list.homfot">{{item.hus}}</address>	
+		</div>
+	</section>
+</script>
+<!-- list页 -->
+<script type="text/template" id="tpl_list">
+	<section id="lists" class="lists">
+		<div v-for="item in listnav" class="dick">
+			<a :href="'#/list/ + item.id'">
+				<img v-bind:src="'img/list/' + item.img">
+			</a>
+			<div class="lititle">
+				<h1>{{item.title}}</h1>	
+				<p>{{item.title2}}</p>
+				<p>{{item.title3}}</p>
+			</div>
+		
+		</div>
+		<h2>Domestic brand</h2>
+		<ul class="type clearfix" id="dirc">
+			<li v-for="item in type" link="'#/product/ + item.id'">
+				<a :href="'#/product/ + item.id'">
+					<img v-bind:src="'img/list/' + item.url" alt="">
+				</a>
+			</li>
+		</ul>
+		<div class="lin">
+			<i v-for="item in img">
+				<img v-bind:src="'img/item/' + item.img" >
+			</i>
+			<a v-for="item in ing">
+				<img v-bind:src="'img/item/' + item.img" >
+			</a>
+			<h2>All creative inspiration</h2>
+			<div id="itp">
+				<p>We do not believe that there will be a perfect home, but we believe that the house can be a perfect display of the owners style characteristics. At home, all styles and functions can be designed according to your preferences and needs, and without spending too much, you can bring a comfortable feeling
+				</p>
+			</div>
+		</div>
+		<!-- list页推展 -->
+		<div class="listad" >
+			<div v-for="item in list" class="listxy">
+				<a :href="'#/product/ + item.id'">
+					<img v-bind:src="'img/listpic/' + item.img">
+				</a>
+				
+				<div class="container">
+					<a class="timec">
+					<img v-bind:src="'img/listpic/' + item.price">
+					</a>
+						<h2>{{item.title}}</h2>
+						<h5>{{item.titleChine}}</h5>
+						<div class="lstpic">
+							<span class="tit">{{item.tit}}</span>
+							<em class="price">{{item.timec}}</em>
+									
+						</div>
+				</div>	
+			</div>
+		</div>
+	</section>
+
+</script>
+
+<!-- product页 -->
+<script type="text/template" id="tpl_product">
+	<section id="product" class="product">
+		<div class="image">
+			<img :src="'img/item/' + data.src">
+			<h1>{{data.title}}</h1>
+			<div>
+				<span>{{data.write}}</span>
+				<span>$<em>{{data.price}}</em></span>
+				<h5>{{data.tax}}</h5>
+			</div>	
+		</div>
+		<div class="price" v-for="item in listnav">	
+			<a :href="'#/list/ + item.id'">
+				<img v-bind:src="'img/item/' + item.img">
+			</a>
+		</div>
+		<div id="details">
+			<i>{{data.Information}}</i>
+			<p>{{data.storeAdress}}</p>
+		</div>
+		<div class="osi">
+			<h3>{{data.storeName}}</h3>			
+			<h5>{{data.size}}</h5>
+		</div>
+		<div class="ptitle">
+			<p>{{data.tel}}</p>
+			<p>{{data.vali}}</p>
+			<p>{{data.rulesi}}</p>
+			<p>{{data.validateTime}}</p>
+			<p>{{data.useTime}}</p>
+			<p>{{data.rules}}</p>
+		</div>
+		<div class="ptitlefo">
+			<img :src="'img/item/' + data.img">
+			<p>{{data.dire}}</p>
+			<p>{{data.fil}}</p>
+		</div>
+	</section>
+</script>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<!-- <script src="js/swiper.min.js"></script> -->
+<script src="js/swiper-3.4.1.jquery.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/mggScrollImg.js"></script>
+<script>
+// (function(){
+// var scrollImg = $.mggScrollImg('.imgbox ul',{
+//         loop : true,//循环切换
+//         auto : true,//自动切换
+//     });
+// })()
+
+</script>
+</script>
+</body>
+</html>
+
+
